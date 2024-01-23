@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSM 5 ADHD Symptom Checklist</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: none; /* Hidden initially */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        .question-container {
+            margin-top: 20px;
+        }
+
+        .multi-choice-container {
+            margin-top: 20px;
+        }
+
+        .checkbox-label {
+            margin-right: 15px;
+            font-weight: normal;
+        }
+
+        .submit-button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Button to open the form */
+        .open-form-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .open-form-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>DSM 5 ADHD Symptom Checklist</h1>
+
+    <!-- Button to open the form -->
+    <button class="open-form-button" onclick="toggleForm()">Open ADHD Form</button>
+
+    <form>
+        <!-- Input Form -->
+        <table>
+            <tr>
+                <th>Name of Child:</th>
+                <td><input type="text" name="childName" required></td>
+            </tr>
+            <tr>
+                <th>Gender:</th>
+                <td>
+                    <select name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </td>
+            </tr>
+            <!-- Repeat similar structure for other input fields -->
+        </table>
+
+        <!-- Question Container -->
+        <div class="question-container">
+            <h2>For each item below, circle the answer that best describes this child.</h2>
+
+            <!-- Inattention Symptoms -->
+            <table class="multi-choice-container">
+                <tr>
+                    <th>i. Fails to give attention to details or makes careless mistakes:</th>
+                    <td>
+                        <label><input type="radio" name="inattention" value="0" required> 0</label>
+                        <label><input type="radio" name="inattention" value="1" required> 1</label>
+                        <label><input type="radio" name="inattention" value="2" required> 2</label>
+                        <label><input type="radio" name="inattention" value="3" required> 3</label>
+                    </td>
+                </tr>
+                <!-- Repeat similar structure for other symptoms -->
+            </table>
+        </div>
+
+        <!-- Additional Questions -->
+        <div class="question-container">
+            <label>xix. Approximately when did you first notice the behaviors:</label>
+            <input type="text" name="noticeBehaviors" required>
+        </div>
+
+        <div class="question-container">
+            <label>xx. Do these symptoms impair the person’s functioning in two or more settings?</label>
+            <select name="impairmentSettings" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <div class="impairment-section">
+            <label class="checkbox-label"><input type="checkbox" name="impairmentHome"> Home</label>
+            <label class="checkbox-label"><input type="checkbox" name="impairmentSchool"> School</label>
+            <label class="checkbox-label"><input type="checkbox" name="impairmentSocially"> Socially</label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+
+    <script>
+        function toggleForm() {
+            const form = document.querySelector('form');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+
+</body>
+
+</html>
